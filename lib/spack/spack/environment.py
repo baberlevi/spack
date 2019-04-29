@@ -125,7 +125,7 @@ def activate(
             cmds += 'setenv SPACK_OLD_PROMPT "${prompt}";\n'
             cmds += 'set prompt="%s ${prompt}";\n' % prompt
     else:
-        if 'color' in os.environ['TERM'] and prompt:
+        if 'color' in os.environ.get['TERM'] and prompt:
             prompt = colorize('@G{%s} ' % prompt, color=True)
 
         cmds += 'export SPACK_ENV=%s;\n' % env.path
